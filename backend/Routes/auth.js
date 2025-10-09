@@ -20,11 +20,11 @@ router.post('/login', async (req, res)=>{
     const { email, password } = req.body;
     try {
         const regUser = await User.findOne({ email });
-        if (!regUser || !(await regUser.comparedPassword(password)))
+        if (!regUser || !(await regUser.comparePassword(password)))
             return res.status(400).json({ message: "invalid credentials"});
 
         const token = jwt.sign({ id: regUser._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
-        res.json({ token, regUser: { name: regUser.name, email: regUser.email, id: regUser._id}});
+        res.json({ token, user: { name: regUser.name, email: regUser.email, id: regUser._id}});
     } catch (error) {
         res.status(500).json({ message: "Server Error"});
     }
