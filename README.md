@@ -264,11 +264,11 @@ The application integrates with Safaricom's M-Pesa API for payment processing:
 
 ## 📄 License
 
-This project is part of the PLP MERN Stack July Cohort hands-on training.
+This project is part of AntolTECHS coding
 
 ## 👨‍💻 Author
 
-PLP Academy - July Cohort
+AntolTECHS
 
 ## 📞 Support
 
